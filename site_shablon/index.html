@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Бургер-меню (CSS-only)</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+    <!-- Скрытый переключатель -->
+    <input type="checkbox" id="nav-toggle" class="burger__checkbox" aria-hidden="true" />
+
+    <header class="header">
+        <a href="#" class="logo">Логотип</a>
+
+        <!-- Кнопка ОТКРЫТЬ (label к чекбоксу) -->
+        <label for="nav-toggle" class="burger__btn" aria-label="Открыть меню">
+      <span class="burger__bars" aria-hidden="true"></span>
+    </label>
+    </header>
+
+    <!-- Оверлей (клик по нему тоже закроет меню) -->
+    <label for="nav-toggle" class="burger__overlay" aria-hidden="true"></label>
+
+    <!-- Панель меню -->
+    <aside class="burger__panel" role="dialog" aria-modal="true" aria-labelledby="burger-title">
+        <div class="burger__panel-header">
+            <h2 id="burger-title" class="sr-only">Меню</h2>
+
+            <!-- Кнопка ЗАКРЫТЬ (label к чекбоксу) -->
+            <label for="nav-toggle" class="burger__close" aria-label="Закрыть меню">✕</label>
+        </div>
+
+        <nav class="burger__menu" aria-label="Основное меню">
+            <a href="#one" class="burger__link">Главная</a>
+            <a href="#two" class="burger__link">О проекте</a>
+            <a href="#three" class="burger__link">Услуги</a>
+            <a href="#four" class="burger__link">Контакты</a>
+            <!-- при клике по ссылке меню останется открытым — без JS это норма -->
+        </nav>
+    </aside>
+
+    <main class="content">
+        <section id="one">
+            <h1>Контент страницы</h1>
+            <p>…</p>
+        </section>
+    </main>
+
+</body>
+
+</html>
